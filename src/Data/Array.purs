@@ -508,9 +508,9 @@ foreign import findLastIndexImpl
 -- | ```
 -- |
 insertAt :: forall a. Int -> a -> Array a -> Maybe (Array a)
-insertAt = _insertAt Just Nothing
+insertAt = insertAt_ Just Nothing
 
-foreign import _insertAt
+foreign import insertAt_
   :: forall a
    . (forall b. b -> Maybe b)
   -> (forall b. Maybe b)
@@ -528,9 +528,9 @@ foreign import _insertAt
 -- | ```
 -- |
 deleteAt :: forall a. Int -> Array a -> Maybe (Array a)
-deleteAt = _deleteAt Just Nothing
+deleteAt = deleteAt_ Just Nothing
 
-foreign import _deleteAt
+foreign import deleteAt_
   :: forall a
    . (forall b. b -> Maybe b)
   -> (forall b. Maybe b)
@@ -547,9 +547,9 @@ foreign import _deleteAt
 -- | ```
 -- |
 updateAt :: forall a. Int -> a -> Array a -> Maybe (Array a)
-updateAt = _updateAt Just Nothing
+updateAt = updateAt_ Just Nothing
 
-foreign import _updateAt
+foreign import updateAt_
   :: forall a
    . (forall b. b -> Maybe b)
   -> (forall b. Maybe b)
